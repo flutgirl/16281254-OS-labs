@@ -102,7 +102,7 @@ int FIFO()//先进先出页面置换算法
 		{
 			miss_num++;
 			memory[curmemory].page = page[i].page;
-			print(memory);
+			//print(memory);
 			curmemory = (curmemory + 1) % memoryNum;   //找出最先进入内存的页面
 		}
 	}
@@ -155,7 +155,7 @@ int OPT()//最佳置换算法
 			}
 			miss_num++;
 			memory[curmemory].page = page[i].page;
-			print(memory);
+			//print(memory);
 		}
 	}
 	miss_rate = (float)miss_num / pageNum;
@@ -187,7 +187,7 @@ int LRU()//最近最久未使用置换算法
 
 			memory[curmemory].page = page[i].page;
 			memory[curmemory].wtime = 0;
-			print(memory);
+			//print(memory);
 
 		}
 		else memory[rec].wtime = 0;
@@ -263,7 +263,7 @@ int NewClock()//改进型Clock置换算法
 			} while (seek == 0);
 		}
 		memory[curmemory].page = page[i].page;
-		print(memory);
+		//print(memory);
 	}
 	miss_rate = (float)miss_num / pageNum;
 	printf("缺页次数：%d 缺页率: %f\n\n", miss_num, miss_rate);
@@ -294,7 +294,7 @@ int PBA()//页面缓冲算法(PBA)
 			if (memory[curmemory].page == -1)
 			{
 				memory[curmemory].page = page[i].page;
-				print(memory);
+				//print(memory);
 				curmemory = (curmemory + 1) % memoryNum;   //找出最先进入内存的页面
 			}
 			else
